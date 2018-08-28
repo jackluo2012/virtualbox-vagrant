@@ -1,32 +1,38 @@
 # 第三章：搭建一个centos7虚拟环境.md
 
 ---
-## 初始化虚拟机项目
+## １、初始化虚拟机项目
 
-### 创建一个目录存入box
+### 创建一个目录存入box  
+将下载好的centos-7.1.box放于此目录。
 ```
-$ mkdir VM（将下载好的centos7.box放于此目录）
+$ mkdir VM
 $ cd VM
 ```
-### 添加box到vagrant
-vagrant box add：添加一个 box 到 Vagrant，这将存储 box 在特定的名称下，以便于多个 Vagrant 环境重复使用。）
-例：vagrant box add　centos7 centos/7  
-vagrant默认会从https://app.vagrantup.com上去下载，一般公司内网下载不了，我们可先下载好，直接指定本定地址，如上面的操作就是先下载到本地然后执行add的。
+### 添加box到vagrant  
+我们下载了centos-7.1.box，要使用它，必须将其加入到vagrant中。
 ```
-$ vagrant box add　centos7　centos-7.1.box（将centos7.box加到vagrant中）
-$ vagrant box list（查看已加入的项目）
+$ vagrant box add　centos7　centos-7.1.box
+$ vagrant box list
 ```
+vagrant box add：添加一个 box 到 Vagrant，这将存储 box 在特定的名称下，以便于多个 Vagrant 环境重复使用。vagrant默认会从https://app.vagrantup.com上去下载，一般公司内网下载不了，我们可先下载好，直接指定本定地址，如下的操作就是先下载到本地然后执行add的。
 
+vagrant box list：查看已加入的项目
 
-```
-$ mkdir master（存放虚拟相关信息，如Vagrantfile）
-$ cd master
-$ vagrant init centos7（这一步会在当前目录生成Vagrantfile，可以查看）
-```
-
+（３）初始化虚拟机  
+创建一个目录，存放虚拟机相关配置信息（Vagrantfile），并执行初始化。  
 
 ```
-$ vagrant up（启动虚拟机）
+$ mkdir vm-centos7
+$ cd vm-centos7
+$ vagrant init centos7
+```
+vagrant init centos7:这一步会在当前目录生成Vagrantfile，可以查看
+
+```
+（４）启动与停止  
+启动虚拟机
+$ vagrant up
 启动部分信息如下，默认是以NAT模式配置网络信息
 ==> default: Preparing network interfaces based on configuration...
     default: Adapter 1: nat

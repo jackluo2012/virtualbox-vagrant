@@ -14,10 +14,11 @@ Vagrant.configure("2") do |config|
   config.vm.box_version = "7.1"
 end
 ```
+
+你也可以通过`config.vm.box_url`配置直接指定 box 的 URL:
 ```
 Vagrant.configure("2") do |config|
   config.vm.box = "centos7"
-  config.vm.hostname = "k8s-master"
   config.vm.box_version = ""
 　config.vm.box_url = ""
 end
