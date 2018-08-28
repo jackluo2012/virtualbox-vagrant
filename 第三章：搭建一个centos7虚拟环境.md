@@ -1,7 +1,6 @@
 # 第三章：搭建一个centos7虚拟环境.md
 
----
-## １、初始化虚拟机项目
+## １、添加box项目
 
 ### 创建一个目录存入box  
 将下载好的centos-7.1.box放于此目录。
@@ -15,11 +14,11 @@ $ cd VM
 $ vagrant box add　centos7　centos-7.1.box
 $ vagrant box list
 ```
-vagrant box add：添加一个 box 到 Vagrant，这将存储 box 在特定的名称下，以便于多个 Vagrant 环境重复使用。vagrant默认会从https://app.vagrantup.com上去下载，一般公司内网下载不了，我们可先下载好，直接指定本定地址，如下的操作就是先下载到本地然后执行add的。
+vagrant box add：添加一个 box 到 Vagrant，这将存储 box 在特定的名称下，以便于多个 Vagrant 环境重复使用。vagrant默认会从`https://app.vagrantup.com上去下载`，一般公司内网下载不了，我们可先下载好，直接指定本定地址，如下的操作就是先下载到本地然后执行add的。
 
 vagrant box list：查看已加入的项目
 
-（３）初始化虚拟机  
+## ２、初始化虚拟机  
 创建一个目录，存放虚拟机相关配置信息（Vagrantfile），并执行初始化。  
 
 ```
@@ -30,8 +29,9 @@ $ vagrant init centos7
 vagrant init centos7:这一步会在当前目录生成Vagrantfile，可以查看
 
 ```
-（４）启动与停止  
-启动虚拟机
+## 3、启动与停止  
+
+### 启动虚拟机
 $ vagrant up
 启动部分信息如下，默认是以NAT模式配置网络信息
 ==> default: Preparing network interfaces based on configuration...
@@ -46,11 +46,8 @@ $ vagrant up
 
 $ vagrant ssh(登录)
 ```
-## Vagrantfile配置及说明
-[Var]
 
-
-## 停止虚拟机
+### 停止虚拟机
 Vagrant 中，你可以通过 `suspend` 、 `halt` 或 `destroy` 来停止虚拟主机运行。这些选项各有利弊，你应该根据需求选择最适合你的方法。
 
 - Suspending
