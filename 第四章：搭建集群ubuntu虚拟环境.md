@@ -54,7 +54,7 @@ end
 
 ## 3、启动
 ```
-vagrant up
+$ vagrant up
 Bringing machine 'ubuntu16.04-node1' up with 'virtualbox' provider...
 Bringing machine 'ubuntu16.04-node2' up with 'virtualbox' provider...
 Bringing machine 'ubuntu16.04-node3' up with 'virtualbox' provider...
@@ -78,37 +78,43 @@ Bringing machine 'ubuntu16.04-node3' up with 'virtualbox' provider...
 ## 4、集群管理
 ### 常用命令
 
-下面是一些常用的Vagrant管理命令，操作特定虚拟机时仅需指定虚拟机的名称。
-```
-vagrant ssh: SSH登陆虚拟机
-vagrant halt: 关闭虚拟机
-vagrant destroy: 删除虚拟机
-vagrant ssh-config 查看虚拟机SSH配置
-```
+下面是一些常用的Vagrant管理命令，操作特定虚拟机时仅需指定虚拟机的名称。  
+vagrant ssh: SSH登陆虚拟机  
+vagrant halt: 关闭虚拟机  
+vagrant destroy: 删除虚拟机  
+vagrant ssh-config 查看虚拟机SSH配置  
+
 
 启动单个虚拟机：
 ```
-vagrant up node1
+$ vagrant up node1
 ```
 
 启动多个虚拟机：
 ```
-vagrant up node1 node3
+$ vagrant up node1 node3
 ```
 
 启动所有虚拟机：
 ```
-vagrant up
+$ vagrant up
 ```
 
 ### SSH免密码登陆
 
 使用vagrant ssh命令登陆虚拟机必须切换到Vagrantfile所在的目录，而直接使用虚拟机IP登陆虚拟机则更为方便:
-``
-ssh vagrant@192.168.33.11
+```
+$ ssh vagrant@192.168.33.11
 ```
 此时SSH登陆需要输入虚拟机vagrant用户的密码，即vagrant
 将主机的公钥复制到虚拟机的authorized_keys文件中即可实现SSH免密码登陆:
+
 ```
-cat $HOME/.ssh/id_rsa.pub | ssh vagrant@192.168.59.1 'cat >> $HOME/.ssh/authorized_keys'
+$ cat $HOME/.ssh/id_rsa.pub | ssh vagrant@192.168.59.1 'cat >> $HOME/.ssh/authorized_keys'
 ```
+
+[第一章：工具介绍](第一章：工具介绍.md)  
+[第二章：搭建环境](第二章：搭建环境.md)  
+[第三章：搭建一个ubuntu虚拟环境](第三章：搭建一个ubuntu虚拟环境.md)  
+[第四章：搭建集群ubuntu虚拟环境](第四章：搭建集群ubuntu虚拟环境.md)  
+[附录一：虚拟机网络模式](附录一：虚拟机网络模式.md)  

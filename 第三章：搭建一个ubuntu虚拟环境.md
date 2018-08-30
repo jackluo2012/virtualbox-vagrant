@@ -14,7 +14,7 @@ $ cd ubuntu16.04
 $ vagrant box add　ubuntu16.04　xenial-server-cloudimg-amd64-vagrant.box
 $ vagrant box list
 ```
-vagrant box add：添加一个 box 到 Vagrant，这将存储 box 在特定的名称下，以便于多个 Vagrant 环境重复使用。vagrant默认会从`https://app.vagrantup.com｀上去下载，一般公司内网下载不了，我们可先下载好，直接指定本定地址，如下的操作就是先下载到本地然后执行add的。
+vagrant box add：添加一个 box 到 Vagrant，这将存储 box 在特定的名称下，以便于多个 Vagrant 环境重复使用。vagrant默认会从`https://app.vagrantup.com` 上去下载，一般公司内网下载不了，我们可先下载好，直接指定本定地址，如下的操作就是先下载到本地然后执行add的。
 
 vagrant box list：查看已加入的项目。
 
@@ -49,7 +49,7 @@ $ vagrant ssh(登录)
 
 ### 停止虚拟机
 ```
-vagrant halt
+$ vagrant halt
 ```
 vagrant中，你可以通过 `suspend` 、 `halt` 或 `destroy` 来停止虚拟主机运行。这些选项各有利弊，你应该根据需求选择最适合你的方法。
 
@@ -178,3 +178,9 @@ stdin: is not a tty
 ```
 vagrant plugin install vagrant-vbguest
 ```
+
+[第一章：工具介绍](第一章：工具介绍.md)  
+[第二章：搭建环境](第二章：搭建环境.md)  
+[第三章：搭建一个ubuntu虚拟环境](第三章：搭建一个ubuntu虚拟环境.md)  
+[第四章：搭建集群ubuntu虚拟环境](第四章：搭建集群ubuntu虚拟环境.md)  
+[附录一：虚拟机网络模式](附录一：虚拟机网络模式.md)  
