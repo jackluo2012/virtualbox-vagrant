@@ -76,7 +76,7 @@ Bringing machine 'ubuntu16.04-node3' up with 'virtualbox' provider...
 ....
 ```
 ## 4、集群管理
-### 常用命令
+### 4.1 常用命令
 
 下面是一些常用的Vagrant管理命令，操作特定虚拟机时仅需指定虚拟机的名称。  
 vagrant ssh: SSH登陆虚拟机  
@@ -100,7 +100,7 @@ $ vagrant up node1 node3
 $ vagrant up
 ```
 
-### SSH免密码登陆
+### 4.2 SSH免密码登陆
 
 使用vagrant ssh命令登陆虚拟机必须切换到Vagrantfile所在的目录，而直接使用虚拟机IP登陆虚拟机则更为方便:
 ```
